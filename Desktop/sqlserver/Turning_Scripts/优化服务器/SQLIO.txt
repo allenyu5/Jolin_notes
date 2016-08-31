@@ -1,0 +1,14 @@
+
+sqlio -kW -s10 -fsequential -t8 -o8 -b8 -LS-Fparam.txt timeout /T 10
+
+
+
+
+
+sqlio -kW -t8 -s120 -o8 -frandom -b8 -BH-LS E:\TestFile.dat
+
+sqlio -kR -t8 -s120 -o8 -frandom -b8 -BH-LS E:\TestFile.dat
+
+sqlio -kW -t8 -s120 -o8 -fsequential -b64-BH -LS E:\TestFile.dat
+
+sqlio -kR -t8 -s120 -o8 -fsequential -b64-BH -LS E:\TestFile.dat

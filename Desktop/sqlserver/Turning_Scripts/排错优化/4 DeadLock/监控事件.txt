@@ -1,0 +1,11 @@
+SQLDiag
+Locks: Deadlock Graph
+Stored Procedures: RPC Starting
+Stored Procedures: RPC Completed
+Stored Procedures: StmtStarting
+Stored Procedures: StmtCompleted
+TSql: StmtStarting
+Tsql: StmtCompleted
+
+---记录死锁事件到错误日志
+DBCC TRACEON (1204, 1222, -1)

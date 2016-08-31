@@ -1,0 +1,26 @@
+问题1：为什么现在CPU使用率比较高，是被什么查询消耗了。
+事件：
+sp_statement_completed
+sql_statement_completed
+
+
+全局字段：
+event_sequence
+query_hash
+session_id
+sql_text
+
+筛选：
+SQLServer.IS_System=0
+
+
+
+-----查看每一个查询累计的CPU消耗
+按cpu排序，然后按query_hash分组，对cpu_time求和，降序排列
+
+问题2：找出拖慢磁盘性能的查询
+按Duration排序，确认排名在前面的几个查询再等待什么资源。
+按session_id,wait_type，sql_text分组，对duration求和降序排列
+
+同时查看性能计数器
+Logical Disk: Avg Disk Sec/Read and Avg Disk Sec/Write 
